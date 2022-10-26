@@ -28,44 +28,44 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Cancel1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.OkBtn1 = new System.Windows.Forms.Button();
+            this.CancelBtn1 = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.Dato1 = new System.Windows.Forms.Label();
             this.Plade1 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.Ok1 = new System.Windows.Forms.Button();
+            this.PladeTB1 = new System.Windows.Forms.TextBox();
+            this.DatoTB1 = new System.Windows.Forms.TextBox();
+            this.NavnTB1 = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.OkBtn2 = new System.Windows.Forms.Button();
+            this.NavnTB2 = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.PladeTB2 = new System.Windows.Forms.TextBox();
+            this.DatoTB2 = new System.Windows.Forms.TextBox();
+            this.CancelBtn2 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.OkBtn3 = new System.Windows.Forms.Button();
+            this.CancelBtn3 = new System.Windows.Forms.Button();
+            this.NavnTB3 = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.OkBtn4 = new System.Windows.Forms.Button();
+            this.CancelBtn4 = new System.Windows.Forms.Button();
+            this.NavnTB4 = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.OpgaveTB4 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.PladeTB4 = new System.Windows.Forms.TextBox();
+            this.DatoTB4 = new System.Windows.Forms.TextBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label14 = new System.Windows.Forms.Label();
@@ -77,33 +77,43 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // Cancel1
-            // 
-            this.Cancel1.Location = new System.Drawing.Point(6, 167);
-            this.Cancel1.Name = "Cancel1";
-            this.Cancel1.Size = new System.Drawing.Size(75, 23);
-            this.Cancel1.TabIndex = 0;
-            this.Cancel1.Text = "Cancel";
-            this.Cancel1.UseVisualStyleBackColor = true;
-            this.Cancel1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.OkBtn1);
+            this.groupBox1.Controls.Add(this.CancelBtn1);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.Dato1);
             this.groupBox1.Controls.Add(this.Plade1);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.Ok1);
-            this.groupBox1.Controls.Add(this.Cancel1);
+            this.groupBox1.Controls.Add(this.PladeTB1);
+            this.groupBox1.Controls.Add(this.DatoTB1);
+            this.groupBox1.Controls.Add(this.NavnTB1);
             this.groupBox1.Location = new System.Drawing.Point(25, 41);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(179, 196);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // OkBtn1
+            // 
+            this.OkBtn1.Location = new System.Drawing.Point(121, 167);
+            this.OkBtn1.Name = "OkBtn1";
+            this.OkBtn1.Size = new System.Drawing.Size(52, 23);
+            this.OkBtn1.TabIndex = 13;
+            this.OkBtn1.Text = "Ok";
+            this.OkBtn1.UseVisualStyleBackColor = true;
+            this.OkBtn1.Click += new System.EventHandler(this.OkBtn1_Click);
+            // 
+            // CancelBtn1
+            // 
+            this.CancelBtn1.Location = new System.Drawing.Point(6, 167);
+            this.CancelBtn1.Name = "CancelBtn1";
+            this.CancelBtn1.Size = new System.Drawing.Size(75, 23);
+            this.CancelBtn1.TabIndex = 12;
+            this.CancelBtn1.Text = "Cancel";
+            this.CancelBtn1.UseVisualStyleBackColor = true;
+            this.CancelBtn1.Click += new System.EventHandler(this.CancelBtn1_Click);
             // 
             // label10
             // 
@@ -144,52 +154,64 @@
             this.label1.Text = "Navn:";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // textBox3
+            // PladeTB1
             // 
-            this.textBox3.Location = new System.Drawing.Point(70, 111);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(103, 23);
-            this.textBox3.TabIndex = 4;
+            this.PladeTB1.Location = new System.Drawing.Point(70, 111);
+            this.PladeTB1.Name = "PladeTB1";
+            this.PladeTB1.Size = new System.Drawing.Size(103, 23);
+            this.PladeTB1.TabIndex = 4;
+            this.PladeTB1.TextChanged += new System.EventHandler(this.PladeTB1_TextChanged);
             // 
-            // textBox2
+            // DatoTB1
             // 
-            this.textBox2.Location = new System.Drawing.Point(70, 79);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(103, 23);
-            this.textBox2.TabIndex = 3;
+            this.DatoTB1.Location = new System.Drawing.Point(70, 79);
+            this.DatoTB1.Name = "DatoTB1";
+            this.DatoTB1.Size = new System.Drawing.Size(103, 23);
+            this.DatoTB1.TabIndex = 3;
             // 
-            // textBox1
+            // NavnTB1
             // 
-            this.textBox1.Location = new System.Drawing.Point(70, 47);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(103, 23);
-            this.textBox1.TabIndex = 2;
-            // 
-            // Ok1
-            // 
-            this.Ok1.Location = new System.Drawing.Point(121, 167);
-            this.Ok1.Name = "Ok1";
-            this.Ok1.Size = new System.Drawing.Size(52, 23);
-            this.Ok1.TabIndex = 1;
-            this.Ok1.Text = "Ok";
-            this.Ok1.UseVisualStyleBackColor = true;
+            this.NavnTB1.Location = new System.Drawing.Point(70, 47);
+            this.NavnTB1.Name = "NavnTB1";
+            this.NavnTB1.Size = new System.Drawing.Size(103, 23);
+            this.NavnTB1.TabIndex = 2;
+            this.NavnTB1.TextChanged += new System.EventHandler(this.NavnTB1_TextChanged);
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.OkBtn2);
+            this.groupBox2.Controls.Add(this.NavnTB2);
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.textBox4);
-            this.groupBox2.Controls.Add(this.textBox5);
-            this.groupBox2.Controls.Add(this.textBox6);
-            this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Controls.Add(this.button2);
+            this.groupBox2.Controls.Add(this.PladeTB2);
+            this.groupBox2.Controls.Add(this.DatoTB2);
+            this.groupBox2.Controls.Add(this.CancelBtn2);
             this.groupBox2.Location = new System.Drawing.Point(253, 41);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(179, 196);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
+            // 
+            // OkBtn2
+            // 
+            this.OkBtn2.Location = new System.Drawing.Point(121, 167);
+            this.OkBtn2.Name = "OkBtn2";
+            this.OkBtn2.Size = new System.Drawing.Size(52, 23);
+            this.OkBtn2.TabIndex = 12;
+            this.OkBtn2.Text = "Ok";
+            this.OkBtn2.UseVisualStyleBackColor = true;
+            this.OkBtn2.Click += new System.EventHandler(this.OkBtn2_Click);
+            // 
+            // NavnTB2
+            // 
+            this.NavnTB2.FormattingEnabled = true;
+            this.NavnTB2.Location = new System.Drawing.Point(70, 47);
+            this.NavnTB2.Name = "NavnTB2";
+            this.NavnTB2.Size = new System.Drawing.Size(103, 23);
+            this.NavnTB2.TabIndex = 11;
+            this.NavnTB2.SelectedIndexChanged += new System.EventHandler(this.NavnTB2_SelectedIndexChanged);
             // 
             // label11
             // 
@@ -228,59 +250,70 @@
             this.label4.TabIndex = 5;
             this.label4.Text = "Navn:";
             // 
-            // textBox4
+            // PladeTB2
             // 
-            this.textBox4.Location = new System.Drawing.Point(70, 111);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(103, 23);
-            this.textBox4.TabIndex = 4;
+            this.PladeTB2.Location = new System.Drawing.Point(70, 111);
+            this.PladeTB2.Name = "PladeTB2";
+            this.PladeTB2.Size = new System.Drawing.Size(103, 23);
+            this.PladeTB2.TabIndex = 4;
             // 
-            // textBox5
+            // DatoTB2
             // 
-            this.textBox5.Location = new System.Drawing.Point(70, 79);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(103, 23);
-            this.textBox5.TabIndex = 3;
+            this.DatoTB2.Location = new System.Drawing.Point(70, 79);
+            this.DatoTB2.Name = "DatoTB2";
+            this.DatoTB2.Size = new System.Drawing.Size(103, 23);
+            this.DatoTB2.TabIndex = 3;
             // 
-            // textBox6
+            // CancelBtn2
             // 
-            this.textBox6.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.textBox6.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.textBox6.Location = new System.Drawing.Point(70, 47);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(103, 23);
-            this.textBox6.TabIndex = 2;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(121, 167);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(52, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Ok";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(6, 167);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "Cancel";
-            this.button2.UseVisualStyleBackColor = true;
+            this.CancelBtn2.Location = new System.Drawing.Point(6, 167);
+            this.CancelBtn2.Name = "CancelBtn2";
+            this.CancelBtn2.Size = new System.Drawing.Size(75, 23);
+            this.CancelBtn2.TabIndex = 0;
+            this.CancelBtn2.Text = "Cancel";
+            this.CancelBtn2.UseVisualStyleBackColor = true;
+            this.CancelBtn2.Click += new System.EventHandler(this.CancelBtn2_Click);
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.OkBtn3);
+            this.groupBox3.Controls.Add(this.CancelBtn3);
+            this.groupBox3.Controls.Add(this.NavnTB3);
             this.groupBox3.Controls.Add(this.label12);
             this.groupBox3.Controls.Add(this.label7);
-            this.groupBox3.Controls.Add(this.textBox9);
-            this.groupBox3.Controls.Add(this.button3);
-            this.groupBox3.Controls.Add(this.button4);
             this.groupBox3.Location = new System.Drawing.Point(478, 41);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(179, 130);
             this.groupBox3.TabIndex = 6;
             this.groupBox3.TabStop = false;
+            // 
+            // OkBtn3
+            // 
+            this.OkBtn3.Location = new System.Drawing.Point(121, 101);
+            this.OkBtn3.Name = "OkBtn3";
+            this.OkBtn3.Size = new System.Drawing.Size(52, 23);
+            this.OkBtn3.TabIndex = 13;
+            this.OkBtn3.Text = "Ok";
+            this.OkBtn3.UseVisualStyleBackColor = true;
+            this.OkBtn3.Click += new System.EventHandler(this.OkBtn3_Click);
+            // 
+            // CancelBtn3
+            // 
+            this.CancelBtn3.Location = new System.Drawing.Point(6, 99);
+            this.CancelBtn3.Name = "CancelBtn3";
+            this.CancelBtn3.Size = new System.Drawing.Size(75, 23);
+            this.CancelBtn3.TabIndex = 13;
+            this.CancelBtn3.Text = "Cancel";
+            this.CancelBtn3.UseVisualStyleBackColor = true;
+            this.CancelBtn3.Click += new System.EventHandler(this.CancelBtn3_Click);
+            // 
+            // NavnTB3
+            // 
+            this.NavnTB3.FormattingEnabled = true;
+            this.NavnTB3.Location = new System.Drawing.Point(70, 47);
+            this.NavnTB3.Name = "NavnTB3";
+            this.NavnTB3.Size = new System.Drawing.Size(103, 23);
+            this.NavnTB3.TabIndex = 12;
             // 
             // label12
             // 
@@ -302,51 +335,52 @@
             this.label7.Text = "Navn:";
             this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
-            // textBox9
-            // 
-            this.textBox9.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.textBox9.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.textBox9.Location = new System.Drawing.Point(70, 47);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(103, 23);
-            this.textBox9.TabIndex = 2;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(121, 99);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(52, 23);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "Ok";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(6, 101);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 0;
-            this.button4.Text = "Cancel";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.OkBtn4);
+            this.groupBox4.Controls.Add(this.CancelBtn4);
+            this.groupBox4.Controls.Add(this.NavnTB4);
             this.groupBox4.Controls.Add(this.label13);
-            this.groupBox4.Controls.Add(this.textBox11);
+            this.groupBox4.Controls.Add(this.OpgaveTB4);
             this.groupBox4.Controls.Add(this.label9);
             this.groupBox4.Controls.Add(this.label5);
             this.groupBox4.Controls.Add(this.label6);
             this.groupBox4.Controls.Add(this.label8);
-            this.groupBox4.Controls.Add(this.textBox7);
-            this.groupBox4.Controls.Add(this.textBox8);
-            this.groupBox4.Controls.Add(this.textBox10);
-            this.groupBox4.Controls.Add(this.button5);
-            this.groupBox4.Controls.Add(this.button6);
+            this.groupBox4.Controls.Add(this.PladeTB4);
+            this.groupBox4.Controls.Add(this.DatoTB4);
             this.groupBox4.Location = new System.Drawing.Point(870, 41);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(179, 220);
+            this.groupBox4.Size = new System.Drawing.Size(179, 209);
             this.groupBox4.TabIndex = 8;
             this.groupBox4.TabStop = false;
+            // 
+            // OkBtn4
+            // 
+            this.OkBtn4.Location = new System.Drawing.Point(121, 180);
+            this.OkBtn4.Name = "OkBtn4";
+            this.OkBtn4.Size = new System.Drawing.Size(52, 23);
+            this.OkBtn4.TabIndex = 14;
+            this.OkBtn4.Text = "Ok";
+            this.OkBtn4.UseVisualStyleBackColor = true;
+            this.OkBtn4.Click += new System.EventHandler(this.OkBtn4_Click);
+            // 
+            // CancelBtn4
+            // 
+            this.CancelBtn4.Location = new System.Drawing.Point(6, 180);
+            this.CancelBtn4.Name = "CancelBtn4";
+            this.CancelBtn4.Size = new System.Drawing.Size(75, 23);
+            this.CancelBtn4.TabIndex = 14;
+            this.CancelBtn4.Text = "Cancel";
+            this.CancelBtn4.UseVisualStyleBackColor = true;
+            this.CancelBtn4.Click += new System.EventHandler(this.CancelBtn4_Click);
+            // 
+            // NavnTB4
+            // 
+            this.NavnTB4.FormattingEnabled = true;
+            this.NavnTB4.Location = new System.Drawing.Point(70, 42);
+            this.NavnTB4.Name = "NavnTB4";
+            this.NavnTB4.Size = new System.Drawing.Size(103, 23);
+            this.NavnTB4.TabIndex = 13;
             // 
             // label13
             // 
@@ -358,12 +392,12 @@
             this.label13.TabIndex = 11;
             this.label13.Text = "Opret Kørsels Log:";
             // 
-            // textBox11
+            // OpgaveTB4
             // 
-            this.textBox11.Location = new System.Drawing.Point(70, 138);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(103, 23);
-            this.textBox11.TabIndex = 9;
+            this.OpgaveTB4.Location = new System.Drawing.Point(70, 138);
+            this.OpgaveTB4.Name = "OpgaveTB4";
+            this.OpgaveTB4.Size = new System.Drawing.Size(103, 23);
+            this.OpgaveTB4.TabIndex = 9;
             // 
             // label9
             // 
@@ -403,46 +437,19 @@
             this.label8.Text = "Navn:";
             this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
-            // textBox7
+            // PladeTB4
             // 
-            this.textBox7.Location = new System.Drawing.Point(70, 107);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(103, 23);
-            this.textBox7.TabIndex = 4;
+            this.PladeTB4.Location = new System.Drawing.Point(70, 107);
+            this.PladeTB4.Name = "PladeTB4";
+            this.PladeTB4.Size = new System.Drawing.Size(103, 23);
+            this.PladeTB4.TabIndex = 4;
             // 
-            // textBox8
+            // DatoTB4
             // 
-            this.textBox8.Location = new System.Drawing.Point(70, 74);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(103, 23);
-            this.textBox8.TabIndex = 3;
-            // 
-            // textBox10
-            // 
-            this.textBox10.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.textBox10.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.textBox10.Location = new System.Drawing.Point(70, 42);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(103, 23);
-            this.textBox10.TabIndex = 2;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(121, 183);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(52, 23);
-            this.button5.TabIndex = 1;
-            this.button5.Text = "Ok";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(6, 183);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 0;
-            this.button6.Text = "Cancel";
-            this.button6.UseVisualStyleBackColor = true;
+            this.DatoTB4.Location = new System.Drawing.Point(70, 74);
+            this.DatoTB4.Name = "DatoTB4";
+            this.DatoTB4.Size = new System.Drawing.Size(103, 23);
+            this.DatoTB4.TabIndex = 3;
             // 
             // dataGridView1
             // 
@@ -452,6 +459,7 @@
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.Size = new System.Drawing.Size(425, 150);
             this.dataGridView1.TabIndex = 9;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // label14
             // 
@@ -505,41 +513,30 @@
         }
 
         #endregion
-
-        private Button Cancel1;
         private GroupBox groupBox1;
-        private Button Ok1;
         private Label label1;
-        private TextBox textBox3;
-        private TextBox textBox2;
-        private TextBox textBox1;
+        private TextBox PladeTB1;
+        private TextBox DatoTB1;
+        private TextBox NavnTB1;
         private Label Dato1;
         private Label Plade1;
         private GroupBox groupBox2;
         private Label label2;
         private Label label3;
         private Label label4;
-        private TextBox textBox4;
-        private TextBox textBox5;
-        private TextBox textBox6;
-        private Button button1;
-        private Button button2;
+        private TextBox PladeTB2;
+        private TextBox DatoTB2;
+        private Button CancelBtn2;
         private GroupBox groupBox3;
         private Label label7;
-        private TextBox textBox9;
-        private Button button3;
-        private Button button4;
         private GroupBox groupBox4;
-        private TextBox textBox11;
+        private TextBox OpgaveTB4;
         private Label label9;
         private Label label5;
         private Label label6;
         private Label label8;
-        private TextBox textBox7;
-        private TextBox textBox8;
-        private TextBox textBox10;
-        private Button button5;
-        private Button button6;
+        private TextBox PladeTB4;
+        private TextBox DatoTB4;
         private Label label10;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private Label label11;
@@ -548,5 +545,15 @@
         private DataGridView dataGridView1;
         private Label label14;
         private Label label15;
+        private ComboBox NavnTB2;
+        private ComboBox NavnTB3;
+        private ComboBox NavnTB4;
+        private Button CancelBtn1;
+        private Button CancelBtn3;
+        private Button CancelBtn4;
+        private Button OkBtn1;
+        private Button OkBtn2;
+        private Button OkBtn3;
+        private Button OkBtn4;
     }
 }
