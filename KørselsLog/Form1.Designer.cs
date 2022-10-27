@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.DatoBox1 = new System.Windows.Forms.DateTimePicker();
             this.OkBtn1 = new System.Windows.Forms.Button();
             this.CancelBtn1 = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
@@ -36,9 +37,9 @@
             this.Plade1 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.PladeTB1 = new System.Windows.Forms.TextBox();
-            this.DatoTB1 = new System.Windows.Forms.TextBox();
             this.NavnTB1 = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.DatoBox2 = new System.Windows.Forms.DateTimePicker();
             this.OkBtn2 = new System.Windows.Forms.Button();
             this.NavnTB2 = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -46,7 +47,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.PladeTB2 = new System.Windows.Forms.TextBox();
-            this.DatoTB2 = new System.Windows.Forms.TextBox();
             this.CancelBtn2 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.OkBtn3 = new System.Windows.Forms.Button();
@@ -55,6 +55,7 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.DatoBox4 = new System.Windows.Forms.DateTimePicker();
             this.OkBtn4 = new System.Windows.Forms.Button();
             this.CancelBtn4 = new System.Windows.Forms.Button();
             this.NavnTB4 = new System.Windows.Forms.ComboBox();
@@ -65,7 +66,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.PladeTB4 = new System.Windows.Forms.TextBox();
-            this.DatoTB4 = new System.Windows.Forms.TextBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label14 = new System.Windows.Forms.Label();
@@ -79,6 +79,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.DatoBox1);
             this.groupBox1.Controls.Add(this.OkBtn1);
             this.groupBox1.Controls.Add(this.CancelBtn1);
             this.groupBox1.Controls.Add(this.label10);
@@ -86,7 +87,6 @@
             this.groupBox1.Controls.Add(this.Plade1);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.PladeTB1);
-            this.groupBox1.Controls.Add(this.DatoTB1);
             this.groupBox1.Controls.Add(this.NavnTB1);
             this.groupBox1.Location = new System.Drawing.Point(25, 41);
             this.groupBox1.Name = "groupBox1";
@@ -94,6 +94,16 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // DatoBox1
+            // 
+            this.DatoBox1.CustomFormat = "dd-MM-yyyy";
+            this.DatoBox1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DatoBox1.Location = new System.Drawing.Point(70, 79);
+            this.DatoBox1.Name = "DatoBox1";
+            this.DatoBox1.Size = new System.Drawing.Size(103, 23);
+            this.DatoBox1.TabIndex = 15;
+            this.DatoBox1.ValueChanged += new System.EventHandler(this.DatoBox1_ValueChanged);
             // 
             // OkBtn1
             // 
@@ -162,13 +172,6 @@
             this.PladeTB1.TabIndex = 4;
             this.PladeTB1.TextChanged += new System.EventHandler(this.PladeTB1_TextChanged);
             // 
-            // DatoTB1
-            // 
-            this.DatoTB1.Location = new System.Drawing.Point(70, 79);
-            this.DatoTB1.Name = "DatoTB1";
-            this.DatoTB1.Size = new System.Drawing.Size(103, 23);
-            this.DatoTB1.TabIndex = 3;
-            // 
             // NavnTB1
             // 
             this.NavnTB1.Location = new System.Drawing.Point(70, 47);
@@ -179,6 +182,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.DatoBox2);
             this.groupBox2.Controls.Add(this.OkBtn2);
             this.groupBox2.Controls.Add(this.NavnTB2);
             this.groupBox2.Controls.Add(this.label11);
@@ -186,13 +190,20 @@
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.PladeTB2);
-            this.groupBox2.Controls.Add(this.DatoTB2);
             this.groupBox2.Controls.Add(this.CancelBtn2);
             this.groupBox2.Location = new System.Drawing.Point(253, 41);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(179, 196);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
+            // 
+            // DatoBox2
+            // 
+            this.DatoBox2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DatoBox2.Location = new System.Drawing.Point(70, 79);
+            this.DatoBox2.Name = "DatoBox2";
+            this.DatoBox2.Size = new System.Drawing.Size(103, 23);
+            this.DatoBox2.TabIndex = 15;
             // 
             // OkBtn2
             // 
@@ -226,7 +237,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(10, 82);
+            this.label2.Location = new System.Drawing.Point(6, 82);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 15);
             this.label2.TabIndex = 7;
@@ -240,6 +251,7 @@
             this.label3.Size = new System.Drawing.Size(58, 15);
             this.label3.TabIndex = 6;
             this.label3.Text = "Nr. Plade:";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
@@ -256,13 +268,6 @@
             this.PladeTB2.Name = "PladeTB2";
             this.PladeTB2.Size = new System.Drawing.Size(103, 23);
             this.PladeTB2.TabIndex = 4;
-            // 
-            // DatoTB2
-            // 
-            this.DatoTB2.Location = new System.Drawing.Point(70, 79);
-            this.DatoTB2.Name = "DatoTB2";
-            this.DatoTB2.Size = new System.Drawing.Size(103, 23);
-            this.DatoTB2.TabIndex = 3;
             // 
             // CancelBtn2
             // 
@@ -337,6 +342,7 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.DatoBox4);
             this.groupBox4.Controls.Add(this.OkBtn4);
             this.groupBox4.Controls.Add(this.CancelBtn4);
             this.groupBox4.Controls.Add(this.NavnTB4);
@@ -347,12 +353,19 @@
             this.groupBox4.Controls.Add(this.label6);
             this.groupBox4.Controls.Add(this.label8);
             this.groupBox4.Controls.Add(this.PladeTB4);
-            this.groupBox4.Controls.Add(this.DatoTB4);
             this.groupBox4.Location = new System.Drawing.Point(870, 41);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(179, 209);
             this.groupBox4.TabIndex = 8;
             this.groupBox4.TabStop = false;
+            // 
+            // DatoBox4
+            // 
+            this.DatoBox4.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DatoBox4.Location = new System.Drawing.Point(70, 74);
+            this.DatoBox4.Name = "DatoBox4";
+            this.DatoBox4.Size = new System.Drawing.Size(103, 23);
+            this.DatoBox4.TabIndex = 15;
             // 
             // OkBtn4
             // 
@@ -421,11 +434,12 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 111);
+            this.label6.Location = new System.Drawing.Point(6, 109);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(58, 15);
             this.label6.TabIndex = 6;
             this.label6.Text = "Nr. Plade:";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label8
             // 
@@ -439,20 +453,14 @@
             // 
             // PladeTB4
             // 
-            this.PladeTB4.Location = new System.Drawing.Point(70, 107);
+            this.PladeTB4.Location = new System.Drawing.Point(70, 106);
             this.PladeTB4.Name = "PladeTB4";
             this.PladeTB4.Size = new System.Drawing.Size(103, 23);
             this.PladeTB4.TabIndex = 4;
             // 
-            // DatoTB4
-            // 
-            this.DatoTB4.Location = new System.Drawing.Point(70, 74);
-            this.DatoTB4.Name = "DatoTB4";
-            this.DatoTB4.Size = new System.Drawing.Size(103, 23);
-            this.DatoTB4.TabIndex = 3;
-            // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(141, 332);
             this.dataGridView1.Name = "dataGridView1";
@@ -516,7 +524,6 @@
         private GroupBox groupBox1;
         private Label label1;
         private TextBox PladeTB1;
-        private TextBox DatoTB1;
         private TextBox NavnTB1;
         private Label Dato1;
         private Label Plade1;
@@ -525,7 +532,6 @@
         private Label label3;
         private Label label4;
         private TextBox PladeTB2;
-        private TextBox DatoTB2;
         private Button CancelBtn2;
         private GroupBox groupBox3;
         private Label label7;
@@ -536,7 +542,6 @@
         private Label label6;
         private Label label8;
         private TextBox PladeTB4;
-        private TextBox DatoTB4;
         private Label label10;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private Label label11;
@@ -555,5 +560,8 @@
         private Button OkBtn2;
         private Button OkBtn3;
         private Button OkBtn4;
+        private DateTimePicker DatoBox1;
+        private DateTimePicker DatoBox2;
+        private DateTimePicker DatoBox4;
     }
 }

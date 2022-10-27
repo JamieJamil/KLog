@@ -5,22 +5,13 @@ namespace KørselsLog
 {
     public partial class Form1 : Form
     {
-        SqlConnection con = new SqlConnection("Server = tcp:klserver.database.windows.net, 1433; Initial Catalog = KørselsLogDB; Persist Security Info=False;User ID = AdminKL; Password=Passw0rd;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout = 30;");
-        SqlCommand cmd;
+        SqlConnection con = new SqlConnection("Server=tcp:klserver.database.windows.net,1433;Initial Catalog=KørselsLogDB;Persist Security Info=False;User ID=AdminKL;Password=Passw0rd;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
         SqlDataAdapter adpt;
         DataTable dt;
         public Form1()
         {
             InitializeComponent();
-            ShowData();
-        }
-
-        public void ShowData()
-        {
-            adpt = new SqlDataAdapter("SELECT * FROM [Table]", con);
-            dt = new DataTable();
-            adpt.Fill(dt);
-            dataGridView1.DataSource = dt;
+            ShowList();
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -81,7 +72,6 @@ namespace KørselsLog
         private void CancelBtn1_Click(object sender, EventArgs e)
         {
             NavnTB1.Text = "";
-            DatoTB1.Text = "";
             PladeTB1.Text = "";
 
             NavnTB1.Focus();
@@ -89,7 +79,6 @@ namespace KørselsLog
         private void CancelBtn2_Click(object sender, EventArgs e)
         {
             NavnTB2.Text = "";
-            DatoTB2.Text = "";
             PladeTB2.Text = "";
 
             NavnTB2.Focus();
@@ -105,7 +94,6 @@ namespace KørselsLog
         private void CancelBtn4_Click(object sender, EventArgs e)
         {
             NavnTB4.Text = "";
-            DatoTB4.Text = "";
             PladeTB4.Text = "";
             OpgaveTB4.Text = "";
 
@@ -115,20 +103,38 @@ namespace KørselsLog
         #region OkBtn
         private void OkBtn1_Click(object sender, EventArgs e)
         {
+            string navn = NavnTB1.Text, nummerPlade = PladeTB1.Text, dato = DatoBox1.Text;
             con.Open();
 
-            SqlCommand com = new SqlCommand("INSERT INTO [Table] VALUES('"+NavnTB1.Text+"', '"+PladeTB1.Text+"')", con);
-            com.ExecuteNonQuery();
+            SqlCommand cmd = new SqlCommand("EXEC InsertData '"+navn+"','"+dato+"','"+nummerPlade+"'", con);
+            cmd.ExecuteNonQuery();
 
             MessageBox.Show("Bruger registreret");
-
             con.Close();
-            ShowData();
+            ShowList();
+        }
+
+        void ShowList() 
+        {
+            SqlCommand cmd = new SqlCommand("EXEC ListData", con);
+            SqlDataAdapter sd = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            sd.Fill(dt);
+            dataGridView1.DataSource = dt;
+
         }
 
         private void OkBtn2_Click(object sender, EventArgs e)
         {
+            string navn = NavnTB2.Text, nummerPlade = PladeTB2.Text, dato = DatoBox2.Text;
+            con.Open();
 
+            SqlCommand cmd = new SqlCommand("EXEC UpdateData '" + navn + "','" + dato + "','" + nummerPlade + "'", con);
+            cmd.ExecuteNonQuery();
+
+            MessageBox.Show("Data opdateret");
+            con.Close();
+            ShowList();
         }
 
         private void OkBtn3_Click(object sender, EventArgs e)
@@ -158,6 +164,31 @@ namespace KørselsLog
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTimePicker2_ValueChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DatoBox1_ValueChanged(object sender, EventArgs e)
         {
 
         }
