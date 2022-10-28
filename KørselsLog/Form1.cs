@@ -6,12 +6,11 @@ namespace KørselsLog
     public partial class Form1 : Form
     {
         SqlConnection con = new SqlConnection("Server=tcp:klserver.database.windows.net,1433;Initial Catalog=KørselsLogDB;Persist Security Info=False;User ID=AdminKL;Password=Passw0rd;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
-        SqlDataAdapter adpt;
-        DataTable dt;
         public Form1()
         {
             InitializeComponent();
             ShowList();
+            ShowLogData();
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -110,6 +109,10 @@ namespace KørselsLog
             cmd.ExecuteNonQuery();
 
             MessageBox.Show("Bruger registreret");
+            NavnTB2.Items.Add(navn);
+            NavnTB1.Clear();
+            PladeTB1.Clear();
+            NavnTB1.Focus();
             con.Close();
             ShowList();
         }
@@ -121,6 +124,16 @@ namespace KørselsLog
             DataTable dt = new DataTable();
             sd.Fill(dt);
             dataGridView1.DataSource = dt;
+
+        }
+
+        void ShowLogData()
+        {
+            SqlCommand cmd = new SqlCommand("EXEC ListKL", con);
+            SqlDataAdapter sd = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            sd.Fill(dt);
+            dataGridView2.DataSource = dt;
 
         }
 
@@ -139,12 +152,35 @@ namespace KørselsLog
 
         private void OkBtn3_Click(object sender, EventArgs e)
         {
+            if(MessageBox.Show("Er du sikker på at du vil slette brugeren fra databasen?", "Slet data", MessageBoxButtons.YesNo)== DialogResult.Yes)
+            {
+                string navn = NavnTB3.Text;
 
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("EXEC DeleteData '" + navn + "'", con);
+                cmd.ExecuteNonQuery();
+
+                MessageBox.Show("Data slettet");
+                con.Close();
+                ShowList();
+            }
         }
 
         private void OkBtn4_Click(object sender, EventArgs e)
         {
+            string navn = NavnTB4.Text, nummerPlade = PladeTB4.Text, dato = DatoBox4.Text, opgave = OpgaveTB4.Text;
+            con.Open();
 
+            SqlCommand cmd = new SqlCommand("EXEC InsertKL '" + navn + "','" + dato + "','" + nummerPlade + "', '"+opgave+"'", con);
+            cmd.ExecuteNonQuery();
+
+            MessageBox.Show("KørselsLog registreret");
+            PladeTB4.Clear();
+            OpgaveTB4.Clear();
+            NavnTB4.Focus();
+            con.Close();
+            ShowLogData();
         }
         #endregion
 
