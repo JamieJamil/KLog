@@ -11,6 +11,7 @@ namespace KørselsLog
             InitializeComponent();
             ShowList();
             ShowLogData();
+            ShowComboBox();
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -109,12 +110,12 @@ namespace KørselsLog
             cmd.ExecuteNonQuery();
 
             MessageBox.Show("Bruger registreret");
-            NavnTB2.Items.Add(navn);
             NavnTB1.Clear();
             PladeTB1.Clear();
             NavnTB1.Focus();
             con.Close();
             ShowList();
+            ShowComboBox();
         }
 
         void ShowList() 
@@ -134,7 +135,21 @@ namespace KørselsLog
             DataTable dt = new DataTable();
             sd.Fill(dt);
             dataGridView2.DataSource = dt;
+        }
 
+        void ShowComboBox()
+        {
+            con.Open();
+            SqlCommand sc = new SqlCommand("SELECT (NAVN) FROM KLData", con);
+            SqlDataReader reader;
+            reader = sc.ExecuteReader();
+            DataTable dt = new DataTable();
+            dt.Load(reader);
+            NavnTB2.ValueMember = "Navn";
+            NavnTB2.DataSource = dt;
+            NavnTB3.ValueMember = "Navn";
+            NavnTB3.DataSource = dt;
+            con.Close();
         }
 
         private void OkBtn2_Click(object sender, EventArgs e)
@@ -164,6 +179,7 @@ namespace KørselsLog
                 MessageBox.Show("Data slettet");
                 con.Close();
                 ShowList();
+                ShowComboBox();
             }
         }
 
