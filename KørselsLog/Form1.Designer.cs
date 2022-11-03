@@ -71,12 +71,16 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.MinimizeBtn = new System.Windows.Forms.Button();
+            this.ExitBtn = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -90,7 +94,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.PladeTB1);
             this.groupBox1.Controls.Add(this.NavnTB1);
-            this.groupBox1.Location = new System.Drawing.Point(25, 41);
+            this.groupBox1.Location = new System.Drawing.Point(25, 73);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(179, 196);
             this.groupBox1.TabIndex = 1;
@@ -109,22 +113,28 @@
             // 
             // OkBtn1
             // 
+            this.OkBtn1.BackColor = System.Drawing.Color.SeaGreen;
+            this.OkBtn1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.OkBtn1.ForeColor = System.Drawing.Color.GhostWhite;
             this.OkBtn1.Location = new System.Drawing.Point(121, 167);
             this.OkBtn1.Name = "OkBtn1";
             this.OkBtn1.Size = new System.Drawing.Size(52, 23);
             this.OkBtn1.TabIndex = 13;
             this.OkBtn1.Text = "Ok";
-            this.OkBtn1.UseVisualStyleBackColor = true;
+            this.OkBtn1.UseVisualStyleBackColor = false;
             this.OkBtn1.Click += new System.EventHandler(this.OkBtn1_Click);
             // 
             // CancelBtn1
             // 
+            this.CancelBtn1.BackColor = System.Drawing.Color.SeaGreen;
+            this.CancelBtn1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CancelBtn1.ForeColor = System.Drawing.Color.GhostWhite;
             this.CancelBtn1.Location = new System.Drawing.Point(6, 167);
             this.CancelBtn1.Name = "CancelBtn1";
             this.CancelBtn1.Size = new System.Drawing.Size(75, 23);
             this.CancelBtn1.TabIndex = 12;
             this.CancelBtn1.Text = "Cancel";
-            this.CancelBtn1.UseVisualStyleBackColor = true;
+            this.CancelBtn1.UseVisualStyleBackColor = false;
             this.CancelBtn1.Click += new System.EventHandler(this.CancelBtn1_Click);
             // 
             // label10
@@ -193,7 +203,7 @@
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.PladeTB2);
             this.groupBox2.Controls.Add(this.CancelBtn2);
-            this.groupBox2.Location = new System.Drawing.Point(253, 41);
+            this.groupBox2.Location = new System.Drawing.Point(253, 73);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(179, 196);
             this.groupBox2.TabIndex = 5;
@@ -209,12 +219,15 @@
             // 
             // OkBtn2
             // 
+            this.OkBtn2.BackColor = System.Drawing.Color.SeaGreen;
+            this.OkBtn2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.OkBtn2.ForeColor = System.Drawing.Color.GhostWhite;
             this.OkBtn2.Location = new System.Drawing.Point(121, 167);
             this.OkBtn2.Name = "OkBtn2";
             this.OkBtn2.Size = new System.Drawing.Size(52, 23);
             this.OkBtn2.TabIndex = 12;
             this.OkBtn2.Text = "Ok";
-            this.OkBtn2.UseVisualStyleBackColor = true;
+            this.OkBtn2.UseVisualStyleBackColor = false;
             this.OkBtn2.Click += new System.EventHandler(this.OkBtn2_Click);
             // 
             // NavnTB2
@@ -273,12 +286,15 @@
             // 
             // CancelBtn2
             // 
+            this.CancelBtn2.BackColor = System.Drawing.Color.SeaGreen;
+            this.CancelBtn2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CancelBtn2.ForeColor = System.Drawing.Color.GhostWhite;
             this.CancelBtn2.Location = new System.Drawing.Point(6, 167);
             this.CancelBtn2.Name = "CancelBtn2";
             this.CancelBtn2.Size = new System.Drawing.Size(75, 23);
             this.CancelBtn2.TabIndex = 0;
             this.CancelBtn2.Text = "Cancel";
-            this.CancelBtn2.UseVisualStyleBackColor = true;
+            this.CancelBtn2.UseVisualStyleBackColor = false;
             this.CancelBtn2.Click += new System.EventHandler(this.CancelBtn2_Click);
             // 
             // groupBox3
@@ -288,7 +304,7 @@
             this.groupBox3.Controls.Add(this.NavnTB3);
             this.groupBox3.Controls.Add(this.label12);
             this.groupBox3.Controls.Add(this.label7);
-            this.groupBox3.Location = new System.Drawing.Point(478, 41);
+            this.groupBox3.Location = new System.Drawing.Point(480, 73);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(179, 130);
             this.groupBox3.TabIndex = 6;
@@ -296,22 +312,28 @@
             // 
             // OkBtn3
             // 
+            this.OkBtn3.BackColor = System.Drawing.Color.SeaGreen;
+            this.OkBtn3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.OkBtn3.ForeColor = System.Drawing.Color.GhostWhite;
             this.OkBtn3.Location = new System.Drawing.Point(121, 101);
             this.OkBtn3.Name = "OkBtn3";
             this.OkBtn3.Size = new System.Drawing.Size(52, 23);
             this.OkBtn3.TabIndex = 13;
             this.OkBtn3.Text = "Ok";
-            this.OkBtn3.UseVisualStyleBackColor = true;
+            this.OkBtn3.UseVisualStyleBackColor = false;
             this.OkBtn3.Click += new System.EventHandler(this.OkBtn3_Click);
             // 
             // CancelBtn3
             // 
+            this.CancelBtn3.BackColor = System.Drawing.Color.SeaGreen;
+            this.CancelBtn3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CancelBtn3.ForeColor = System.Drawing.Color.GhostWhite;
             this.CancelBtn3.Location = new System.Drawing.Point(6, 99);
             this.CancelBtn3.Name = "CancelBtn3";
             this.CancelBtn3.Size = new System.Drawing.Size(75, 23);
             this.CancelBtn3.TabIndex = 13;
             this.CancelBtn3.Text = "Cancel";
-            this.CancelBtn3.UseVisualStyleBackColor = true;
+            this.CancelBtn3.UseVisualStyleBackColor = false;
             this.CancelBtn3.Click += new System.EventHandler(this.CancelBtn3_Click);
             // 
             // NavnTB3
@@ -355,7 +377,7 @@
             this.groupBox4.Controls.Add(this.label6);
             this.groupBox4.Controls.Add(this.label8);
             this.groupBox4.Controls.Add(this.PladeTB4);
-            this.groupBox4.Location = new System.Drawing.Point(870, 41);
+            this.groupBox4.Location = new System.Drawing.Point(870, 73);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(179, 209);
             this.groupBox4.TabIndex = 8;
@@ -371,22 +393,28 @@
             // 
             // OkBtn4
             // 
+            this.OkBtn4.BackColor = System.Drawing.Color.SeaGreen;
+            this.OkBtn4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.OkBtn4.ForeColor = System.Drawing.Color.GhostWhite;
             this.OkBtn4.Location = new System.Drawing.Point(121, 180);
             this.OkBtn4.Name = "OkBtn4";
             this.OkBtn4.Size = new System.Drawing.Size(52, 23);
             this.OkBtn4.TabIndex = 14;
             this.OkBtn4.Text = "Ok";
-            this.OkBtn4.UseVisualStyleBackColor = true;
+            this.OkBtn4.UseVisualStyleBackColor = false;
             this.OkBtn4.Click += new System.EventHandler(this.OkBtn4_Click);
             // 
             // CancelBtn4
             // 
+            this.CancelBtn4.BackColor = System.Drawing.Color.SeaGreen;
+            this.CancelBtn4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CancelBtn4.ForeColor = System.Drawing.Color.GhostWhite;
             this.CancelBtn4.Location = new System.Drawing.Point(6, 180);
             this.CancelBtn4.Name = "CancelBtn4";
             this.CancelBtn4.Size = new System.Drawing.Size(75, 23);
             this.CancelBtn4.TabIndex = 14;
             this.CancelBtn4.Text = "Cancel";
-            this.CancelBtn4.UseVisualStyleBackColor = true;
+            this.CancelBtn4.UseVisualStyleBackColor = false;
             this.CancelBtn4.Click += new System.EventHandler(this.CancelBtn4_Click);
             // 
             // NavnTB4
@@ -396,6 +424,7 @@
             this.NavnTB4.Name = "NavnTB4";
             this.NavnTB4.Size = new System.Drawing.Size(103, 23);
             this.NavnTB4.TabIndex = 13;
+            this.NavnTB4.SelectedIndexChanged += new System.EventHandler(this.NavnTB4_SelectedIndexChanged);
             // 
             // label13
             // 
@@ -462,9 +491,9 @@
             // 
             // dataGridView1
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.GhostWhite;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(141, 332);
+            this.dataGridView1.Location = new System.Drawing.Point(141, 364);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.Size = new System.Drawing.Size(425, 150);
@@ -475,7 +504,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label14.Location = new System.Drawing.Point(90, 13);
+            this.label14.Location = new System.Drawing.Point(96, 51);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(145, 25);
             this.label14.TabIndex = 10;
@@ -486,7 +515,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label15.Location = new System.Drawing.Point(844, 13);
+            this.label15.Location = new System.Drawing.Point(850, 51);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(222, 25);
             this.label15.TabIndex = 11;
@@ -495,19 +524,64 @@
             // 
             // dataGridView2
             // 
-            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGridView2.BackgroundColor = System.Drawing.Color.GhostWhite;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(799, 332);
+            this.dataGridView2.Location = new System.Drawing.Point(799, 364);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowTemplate.Height = 25;
             this.dataGridView2.Size = new System.Drawing.Size(324, 150);
             this.dataGridView2.TabIndex = 12;
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.SeaGreen;
+            this.panel1.Controls.Add(this.MinimizeBtn);
+            this.panel1.Controls.Add(this.ExitBtn);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1154, 40);
+            this.panel1.TabIndex = 14;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
+            // 
+            // MinimizeBtn
+            // 
+            this.MinimizeBtn.BackColor = System.Drawing.Color.SeaGreen;
+            this.MinimizeBtn.FlatAppearance.BorderColor = System.Drawing.Color.MediumSeaGreen;
+            this.MinimizeBtn.FlatAppearance.BorderSize = 0;
+            this.MinimizeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MinimizeBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.MinimizeBtn.ForeColor = System.Drawing.Color.GhostWhite;
+            this.MinimizeBtn.Location = new System.Drawing.Point(1085, -12);
+            this.MinimizeBtn.Name = "MinimizeBtn";
+            this.MinimizeBtn.Size = new System.Drawing.Size(33, 52);
+            this.MinimizeBtn.TabIndex = 1;
+            this.MinimizeBtn.Text = "_";
+            this.MinimizeBtn.UseVisualStyleBackColor = false;
+            this.MinimizeBtn.Click += new System.EventHandler(this.MinimizeBtn_Click);
+            // 
+            // ExitBtn
+            // 
+            this.ExitBtn.BackColor = System.Drawing.Color.SeaGreen;
+            this.ExitBtn.FlatAppearance.BorderColor = System.Drawing.Color.MediumSeaGreen;
+            this.ExitBtn.FlatAppearance.BorderSize = 0;
+            this.ExitBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ExitBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.ExitBtn.ForeColor = System.Drawing.Color.GhostWhite;
+            this.ExitBtn.Location = new System.Drawing.Point(1118, 0);
+            this.ExitBtn.Name = "ExitBtn";
+            this.ExitBtn.Size = new System.Drawing.Size(33, 40);
+            this.ExitBtn.TabIndex = 0;
+            this.ExitBtn.Text = "x";
+            this.ExitBtn.UseVisualStyleBackColor = false;
+            this.ExitBtn.Click += new System.EventHandler(this.ExitBtn_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1189, 501);
+            this.BackColor = System.Drawing.Color.GhostWhite;
+            this.ClientSize = new System.Drawing.Size(1151, 528);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label14);
@@ -516,7 +590,10 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
+            this.Padding = new System.Windows.Forms.Padding(6);
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
@@ -529,6 +606,7 @@
             this.groupBox4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -578,5 +656,8 @@
         private DateTimePicker DatoBox2;
         private DateTimePicker DatoBox4;
         private DataGridView dataGridView2;
+        private Panel panel1;
+        private Button ExitBtn;
+        private Button MinimizeBtn;
     }
 }

@@ -1,5 +1,6 @@
 using System.Data;
 using System.Data.SqlClient;
+using System.Runtime.InteropServices;
 
 namespace KørselsLog
 {
@@ -13,28 +14,21 @@ namespace KørselsLog
             ShowLogData();
             ShowComboBox();
         }
+        #region DragForm
+        // Kode der gør at man kan dragge programmet rundt 
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr one, int two, int three, int four);
 
-        private void groupBox1_Enter(object sender, EventArgs e)
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
         {
-
+            ReleaseCapture();
+            SendMessage(Handle, 0x112, 0xf012, 0);
         }
-
+        #endregion
+        #region Labels
         private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
@@ -59,6 +53,11 @@ namespace KørselsLog
 
         }
 
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void label14_Click(object sender, EventArgs e)
         {
 
@@ -68,6 +67,18 @@ namespace KørselsLog
         {
 
         }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        #endregion
         #region CancelBtn
         private void CancelBtn1_Click(object sender, EventArgs e)
         {
@@ -103,22 +114,91 @@ namespace KørselsLog
         #region OkBtn
         private void OkBtn1_Click(object sender, EventArgs e)
         {
-            string navn = NavnTB1.Text, nummerPlade = PladeTB1.Text, dato = DatoBox1.Text;
-            con.Open();
+            if(NavnTB1.Text == "" || PladeTB1.Text == "")
+            {
+                MessageBox.Show("Alle felter skal udfyldes");
+            }
+            else 
+            {
+                string navn = NavnTB1.Text, nummerPlade = PladeTB1.Text, dato = DatoBox1.Text;
+                con.Open();
 
-            SqlCommand cmd = new SqlCommand("EXEC InsertData '"+navn+"','"+dato+"','"+nummerPlade+"'", con);
-            cmd.ExecuteNonQuery();
+                SqlCommand cmd = new SqlCommand("EXEC InsertData '" + navn + "','" + dato + "','" + nummerPlade + "'", con);
+                cmd.ExecuteNonQuery();
 
-            MessageBox.Show("Bruger registreret");
-            NavnTB1.Clear();
-            PladeTB1.Clear();
-            NavnTB1.Focus();
-            con.Close();
-            ShowList();
-            ShowComboBox();
+                MessageBox.Show("Bruger registreret");
+                NavnTB1.Clear();
+                PladeTB1.Clear();
+                NavnTB1.Focus();
+                con.Close();
+                ShowList();
+                ShowComboBox();
+            }
         }
 
-        void ShowList() 
+        private void OkBtn2_Click(object sender, EventArgs e)
+        {
+            if (NavnTB2.Text == "" || PladeTB2.Text == "")
+            {
+                MessageBox.Show("Alle felter skal udfyldes");
+            }
+            else
+            {
+                string navn = NavnTB2.Text, nummerPlade = PladeTB2.Text, dato = DatoBox2.Text;
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("EXEC UpdateData '" + navn + "','" + dato + "','" + nummerPlade + "'", con);
+                cmd.ExecuteNonQuery();
+
+                MessageBox.Show("Data opdateret");
+                con.Close();
+                ShowList();
+            }
+        }
+
+        private void OkBtn3_Click(object sender, EventArgs e)
+        {
+            if(MessageBox.Show("Er du sikker på at du vil slette brugeren fra databasen?", "Slet data", MessageBoxButtons.YesNo)== DialogResult.Yes)
+            {
+                string navn = NavnTB3.Text;
+
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("EXEC DeleteData '" + navn + "'", con);
+                cmd.ExecuteNonQuery();
+
+                MessageBox.Show("Data slettet");
+                con.Close();
+                ShowList();
+                ShowComboBox();
+            }
+        }
+
+        private void OkBtn4_Click(object sender, EventArgs e)
+        {
+            if (NavnTB4.Text == "" || PladeTB4.Text == "" || OpgaveTB4.Text == "")
+            {
+                MessageBox.Show("Alle felter skal udfyldes");
+            }
+            else
+            {
+                string navn = NavnTB4.Text, nummerPlade = PladeTB4.Text, dato = DatoBox4.Text, opgave = OpgaveTB4.Text;
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("EXEC InsertKL '" + navn + "','" + dato + "','" + nummerPlade + "', '" + opgave + "'", con);
+                cmd.ExecuteNonQuery();
+
+                MessageBox.Show("KørselsLog registreret");
+                PladeTB4.Clear();
+                OpgaveTB4.Clear();
+                NavnTB4.Focus();
+                con.Close();
+                ShowLogData();
+            }
+        }
+        #endregion
+        #region ShowCommands
+        void ShowList()
         {
             SqlCommand cmd = new SqlCommand("EXEC ListData", con);
             SqlDataAdapter sd = new SqlDataAdapter(cmd);
@@ -149,56 +229,27 @@ namespace KørselsLog
             NavnTB2.DataSource = dt;
             NavnTB3.ValueMember = "Navn";
             NavnTB3.DataSource = dt;
+            NavnTB4.ValueMember = "Navn";
+            NavnTB4.DataSource = dt;
             con.Close();
-        }
-
-        private void OkBtn2_Click(object sender, EventArgs e)
-        {
-            string navn = NavnTB2.Text, nummerPlade = PladeTB2.Text, dato = DatoBox2.Text;
-            con.Open();
-
-            SqlCommand cmd = new SqlCommand("EXEC UpdateData '" + navn + "','" + dato + "','" + nummerPlade + "'", con);
-            cmd.ExecuteNonQuery();
-
-            MessageBox.Show("Data opdateret");
-            con.Close();
-            ShowList();
-        }
-
-        private void OkBtn3_Click(object sender, EventArgs e)
-        {
-            if(MessageBox.Show("Er du sikker på at du vil slette brugeren fra databasen?", "Slet data", MessageBoxButtons.YesNo)== DialogResult.Yes)
-            {
-                string navn = NavnTB3.Text;
-
-                con.Open();
-
-                SqlCommand cmd = new SqlCommand("EXEC DeleteData '" + navn + "'", con);
-                cmd.ExecuteNonQuery();
-
-                MessageBox.Show("Data slettet");
-                con.Close();
-                ShowList();
-                ShowComboBox();
-            }
-        }
-
-        private void OkBtn4_Click(object sender, EventArgs e)
-        {
-            string navn = NavnTB4.Text, nummerPlade = PladeTB4.Text, dato = DatoBox4.Text, opgave = OpgaveTB4.Text;
-            con.Open();
-
-            SqlCommand cmd = new SqlCommand("EXEC InsertKL '" + navn + "','" + dato + "','" + nummerPlade + "', '"+opgave+"'", con);
-            cmd.ExecuteNonQuery();
-
-            MessageBox.Show("KørselsLog registreret");
-            PladeTB4.Clear();
-            OpgaveTB4.Clear();
-            NavnTB4.Focus();
-            con.Close();
-            ShowLogData();
         }
         #endregion
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            this.TopMost = true;
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
 
         private void NavnTB1_TextChanged(object sender, EventArgs e)
         {
@@ -220,16 +271,6 @@ namespace KørselsLog
 
         }
 
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
         {
 
@@ -243,6 +284,36 @@ namespace KørselsLog
         private void DatoBox1_ValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void ExitBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void MinimizeBtn_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void NavnTB4_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SqlCommand cmd = new SqlCommand("SELECT * FROM KLData WHERE Navn ='"+NavnTB4.Text+"'", con);
+            con.Close();
+            con.Open();
+            SqlDataReader dr;
+            dr = cmd.ExecuteReader();
+            while(dr.Read())
+            {
+                string plade = (string) dr["NummerPlade"].ToString();
+                PladeTB4.Text = plade;
+            }
+            con.Close();
         }
     }
 }
