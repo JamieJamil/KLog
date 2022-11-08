@@ -234,7 +234,6 @@ namespace KørselsLog
             con.Close();
         }
         #endregion
-
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
@@ -263,7 +262,17 @@ namespace KørselsLog
 
         private void NavnTB2_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            SqlCommand cmd = new SqlCommand("SELECT * FROM KLData WHERE Navn ='" + NavnTB2.Text + "'", con);
+            con.Close();
+            con.Open();
+            SqlDataReader dr;
+            dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                string? plade = dr["NummerPlade"].ToString();
+                PladeTB2.Text = plade;
+            }
+            con.Close();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -310,7 +319,7 @@ namespace KørselsLog
             dr = cmd.ExecuteReader();
             while(dr.Read())
             {
-                string plade = (string) dr["NummerPlade"].ToString();
+                string? plade = dr["NummerPlade"].ToString();
                 PladeTB4.Text = plade;
             }
             con.Close();
