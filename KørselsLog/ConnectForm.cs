@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+
 
 namespace KørselsLog
 {
@@ -18,6 +20,15 @@ namespace KørselsLog
         }
 
         private void button1_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+
+            Form1 newForm = new Form1();
+            newForm.ShowDialog();
+
+            this.WindowState = FormWindowState.Normal;
+        }
+        private void button3_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
 
