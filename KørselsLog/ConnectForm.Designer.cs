@@ -44,11 +44,11 @@
             this.button1.BackColor = System.Drawing.Color.SeaGreen;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.GhostWhite;
-            this.button1.Location = new System.Drawing.Point(6, 93);
+            this.button1.Location = new System.Drawing.Point(6, 91);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(82, 23);
+            this.button1.Size = new System.Drawing.Size(100, 23);
             this.button1.TabIndex = 0;
-            this.button1.Text = "Azure Server";
+            this.button1.Text = "Azure Database";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -78,9 +78,9 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Location = new System.Drawing.Point(274, 146);
+            this.groupBox1.Location = new System.Drawing.Point(263, 146);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(200, 122);
+            this.groupBox1.Size = new System.Drawing.Size(250, 120);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             // 
@@ -88,11 +88,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(13, 19);
+            this.label2.Location = new System.Drawing.Point(26, 19);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(174, 25);
+            this.label2.Size = new System.Drawing.Size(198, 25);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Tilslut til en server";
+            this.label2.Text = "Tilslut til en database";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // button3
@@ -100,11 +100,11 @@
             this.button3.BackColor = System.Drawing.Color.SeaGreen;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.ForeColor = System.Drawing.Color.GhostWhite;
-            this.button3.Location = new System.Drawing.Point(108, 93);
+            this.button3.Location = new System.Drawing.Point(144, 91);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(86, 23);
+            this.button3.Size = new System.Drawing.Size(100, 23);
             this.button3.TabIndex = 1;
-            this.button3.Text = "------  Server";
+            this.button3.Text = "SQL Database";
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 

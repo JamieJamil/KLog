@@ -7,18 +7,31 @@ namespace KørselsLog
     public partial class Form1 : Form
     {
 
-        SqlConnection con = new SqlConnection("Server=tcp:klserver.database.windows.net,1433;Initial Catalog=KørselsLogDB;Persist Security Info=False;User ID=AdminKL;Password=Passw0rd;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
+        //SqlConnection con = new SqlConnection("Server=tcp:klserver.database.windows.net,1433;Initial Catalog=KørselsLogDB;Persist Security Info=False;User ID=AdminKL;Password=Passw0rd;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
         //SqlConnection con2 = new SqlConnection(@"Data Source = 192.168.23.132,1433\SQLEXPRESS;User ID = sa; Password=Passw0rd;Connect Timeout = 30; Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;Initial Catalog=KørselsLogDB");
 
-
-
-        public Form1()
+        SqlConnection con;
+        public Form1(string connectionString)
         {
+            con = new SqlConnection(connectionString);
+            con.Close();
             InitializeComponent();
             ShowList();
             ShowLogData();
             ShowComboBox();
         }
+
+        public bool IsConnection
+        {
+            get 
+            {
+                if (con.State == System.Data.ConnectionState.Closed)
+                    con.Open();
+                con.Close();
+                return true;
+            }
+        }
+
         #region DragForm
         // Kode der gør at man kan dragge programmet rundt 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -81,6 +94,7 @@ namespace KørselsLog
                 // Strings til textboxe.
                 string navn = NavnTB1.Text, nummerPlade = PladeTB1.Text, dato = DatoBox1.Text;
                 // Åbner connection.
+                
                 con.Open();
 
                 // Executer SQL command som gemmer brugerens input til databasen.
