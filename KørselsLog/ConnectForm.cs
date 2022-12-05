@@ -14,8 +14,6 @@ namespace KørselsLog
 {
     public partial class ConnectForm : Form
     {
-
-
         public ConnectForm()
         {
             InitializeComponent();
@@ -23,11 +21,7 @@ namespace KørselsLog
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //SqlConnection con = new SqlConnection();
-            //con.Open();
             string azureServer = string.Format("Server = tcp:klserver.database.windows.net,1433; Initial Catalog = KørselsLogDB; Persist Security Info = False; User ID = AdminKL; Password = Passw0rd; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30; ");
-
-
             Form1 newForm = new Form1(azureServer);
             if (newForm.IsConnection)
             newForm.ShowDialog();
