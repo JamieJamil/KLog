@@ -57,9 +57,9 @@
             this.button2.BackColor = System.Drawing.Color.LightCoral;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button2.Location = new System.Drawing.Point(332, 328);
+            this.button2.Location = new System.Drawing.Point(342, 327);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(92, 29);
+            this.button2.Size = new System.Drawing.Size(90, 29);
             this.button2.TabIndex = 1;
             this.button2.Text = "Luk program";
             this.button2.UseVisualStyleBackColor = false;
@@ -78,7 +78,7 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Location = new System.Drawing.Point(263, 146);
+            this.groupBox1.Location = new System.Drawing.Point(262, 146);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(250, 120);
             this.groupBox1.TabIndex = 3;

@@ -88,6 +88,13 @@ namespace KørselsLog
                 // Pop up fejlmeddelelse.
                 MessageBox.Show("Alle felter skal udfyldes");
             }
+
+            if (!System.Text.RegularExpressions.Regex.IsMatch(NavnTB1.Text, "^[a-zA-Z ]"))
+            {
+                // Pop up fejlmeddelelse.
+                MessageBox.Show("Ugyldigt tegn i navnefeltet");
+            }
+
             // Brugeren indtaster korrekt.
             else 
             {
