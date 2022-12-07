@@ -88,7 +88,7 @@ namespace KørselsLog
                 // Pop up fejlmeddelelse.
                 MessageBox.Show("Alle felter skal udfyldes");
             }
-
+            // Sørger for at brugeren ikke kan indtaste et tal i navnefeltet.
             if (!System.Text.RegularExpressions.Regex.IsMatch(NavnTB1.Text, "^[a-zA-Z ]"))
             {
                 // Pop up fejlmeddelelse.
@@ -98,87 +98,107 @@ namespace KørselsLog
             // Brugeren indtaster korrekt.
             else 
             {
-                // Strings til textboxe.
+                // Strings til textboxe og for at gemme i databasen.
                 string navn = NavnTB1.Text, nummerPlade = PladeTB1.Text, dato = DatoBox1.Text;
-                // Åbner connection.
-                
+                // Åbner connection.            
                 con.Open();
 
-                // Executer SQL command som gemmer brugerens input til databasen.
+                // Executer stored procedure SQL command som gemmer brugerens input til databasen.
                 SqlCommand cmd = new SqlCommand("EXEC InsertData '" + navn + "','" + dato + "','" + nummerPlade + "'", con);
                 cmd.ExecuteNonQuery();
 
-                // Pop up for at brugeren ved at det blev indsat korrekt.
+                // Pop up for at brugeren ved at navnet blev indtastet korrekt.
                 MessageBox.Show("Bruger registreret");
-                // Efter input er blevet gemt, slettes input i textboxende
+                // Efter input er blevet gemt, slettes input i textboxende.
                 NavnTB1.Clear();
                 PladeTB1.Clear();
                 NavnTB1.Focus();
                 con.Close();
-                // Viser opdateret database.
+                // Opdatere listen der viser databasen. Gør brug af et andet objekt som bruges til at vise databasen i et GridView.
                 ShowList();
-                // Viser input fra databasen i combox. 
+                // Indsætter data og viser data fra databasen i en combobox til at redigere brugere. 
                 ShowComboBox();
             }
         }
 
         private void OkBtn2_Click(object sender, EventArgs e)
         {
+            // Sørger for at programmet ikke acceptere intet input fra bruger.
             if (NavnTB2.Text == "" || PladeTB2.Text == "")
             {
+                // Pop up fejlmeddelelse.
                 MessageBox.Show("Alle felter skal udfyldes");
             }
             else
             {
+                // Strings til textboxe og for at opdatere i databasen.
                 string navn = NavnTB2.Text, nummerPlade = PladeTB2.Text, dato = DatoBox2.Text;
                 con.Open();
 
+                // Executer stored procedure SQL command som opdatere dataen.
                 SqlCommand cmd = new SqlCommand("EXEC UpdateData '" + navn + "','" + dato + "','" + nummerPlade + "'", con);
                 cmd.ExecuteNonQuery();
 
+                // Pop up for at fortælle brugeren at dataen er blevet opdateret.
                 MessageBox.Show("Data opdateret");
                 con.Close();
+                // Opdatere listen der viser databasen. Gør brug af et andet objekt som bruges til at vise databasen i et GridView.
                 ShowList();
             }
         }
 
         private void OkBtn3_Click(object sender, EventArgs e)
         {
+            // Pop up der spørger bruger om de er sikker på om de vil slette data.
             if(MessageBox.Show("Er du sikker på at du vil slette brugeren fra databasen?", "Slet data", MessageBoxButtons.YesNo)== DialogResult.Yes)
             {
                 string navn = NavnTB3.Text;
 
                 con.Open();
 
+                // Executer stored procedure SQL command som opdatere dataen.
                 SqlCommand cmd = new SqlCommand("EXEC DeleteData '" + navn + "'", con);
                 cmd.ExecuteNonQuery();
 
+                // Pop up for at fortælle bruger at data er blevet slettet.
                 MessageBox.Show("Data slettet");
                 con.Close();
+
+                // Opdatere listen der viser databasen, sp man ikke kan se den slettet bruger mere.
                 ShowList();
+                // Sletter bruger fra comboboxende. 
                 ShowComboBox();
             }
         }
 
         private void OkBtn4_Click(object sender, EventArgs e)
         {
+            // Sørger for at programmet ikke acceptere tomme felter.
             if (NavnTB4.Text == "" || PladeTB4.Text == "" || OpgaveTB4.Text == "")
             {
+                // Pop up fejlmeddelelse.
                 MessageBox.Show("Alle felter skal udfyldes");
             }
             else
             {
+                // Strings til textboxe og for at gemme data i databasen.
                 string navn = NavnTB4.Text, nummerPlade = PladeTB4.Text, dato = DatoBox4.Text, opgave = OpgaveTB4.Text;
                 con.Open();
 
+                // Executer stored procedure SQL command som gemmer brugerens input til databasen.
                 SqlCommand cmd = new SqlCommand("EXEC InsertKL '" + navn + "','" + dato + "','" + nummerPlade + "', '" + opgave + "'", con);
                 cmd.ExecuteNonQuery();
 
+                // Pop up for at brugeren ved at kørselslogen blev avet korrekt.
                 MessageBox.Show("KørselsLog registreret");
+
+                // Efter input er blevet gemt, slettes input i textboxende.
                 PladeTB4.Clear();
                 OpgaveTB4.Clear();
                 NavnTB4.Focus();
                 con.Close();
+
+                // Opdatere GridView der viser databasen.
                 ShowLogData();
             }
         }
@@ -207,13 +227,13 @@ namespace KørselsLog
         void ShowComboBox()
         {
             con.Open();
-            // Command for at kunne vælge navn fra databasen i en combobox.
+            // Kode for at kunne læse data og vælge navn fra databasen i en combobox.
             SqlCommand sc = new SqlCommand("SELECT (NAVN) FROM KLData", con);
             SqlDataReader reader;
             reader = sc.ExecuteReader();
             DataTable dt = new DataTable();
             dt.Load(reader);
-            // Ændre alle comboboxe til det samme navn.
+            // Ændre alle comboboxe til det samme navn som er valgt i boxen.
             NavnTB2.ValueMember = "Navn";
             NavnTB2.DataSource = dt;
             NavnTB3.ValueMember = "Navn";
@@ -230,10 +250,12 @@ namespace KørselsLog
             SqlCommand cmd = new SqlCommand("SELECT * FROM KLData WHERE Navn ='" + NavnTB2.Text + "'", con);
             con.Close();
             con.Open();
+            // Læser data
             SqlDataReader dr;
             dr = cmd.ExecuteReader();
             while (dr.Read())
             {
+                // Vælger at nummerplade skal vises når et navn er bevet valgt.
                 string? plade = dr["NummerPlade"].ToString();
                 PladeTB2.Text = plade;
             }
