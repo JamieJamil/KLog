@@ -7,8 +7,8 @@ namespace KørselsLog
     public partial class Form1 : Form
     {
 
-        //SqlConnection con = new SqlConnection("Server=tcp:klserver.database.windows.net,1433;Initial Catalog=KørselsLogDB;Persist Security Info=False;User ID=AdminKL;Password=Passw0rd;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
-        //SqlConnection con2 = new SqlConnection(@"Data Source = 192.168.23.132,1433\SQLEXPRESS;User ID = sa; Password=Passw0rd;Connect Timeout = 30; Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;Initial Catalog=KørselsLogDB");
+        //SqlConnection azure = new SqlConnection("Server=tcp:klserver.database.windows.net,1433;Initial Catalog=KørselsLogDB;Persist Security Info=False;User ID=AdminKL;Password=Passw0rd;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
+        //SqlConnection sql = new SqlConnection(@"Data Source = 192.168.23.132,1433\SQLEXPRESS;User ID = sa; Password=Passw0rd;Connect Timeout = 30; Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;Initial Catalog=KørselsLogDB");
 
         SqlConnection con;
         public Form1(string connectionString)
@@ -25,13 +25,13 @@ namespace KørselsLog
         {
             get 
             {
-                if (con.State == System.Data.ConnectionState.Closed)
-                    con.Open();
-                con.Close();
+                // Tjekker om connection åben
+                if (con.State == System.Data.ConnectionState.Open)
+                    // Lukker connection efter den har tjekket
+                    con.Close();
                 return true;
             }
         }
-
         #region DragForm
         // Kode der gør at man kan dragge programmet rundt 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
