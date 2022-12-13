@@ -32,8 +32,8 @@ namespace KørselsLog
                 return true;
             }
         }
-        #region DragForm
-        // Kode der gør at man kan dragge programmet rundt 
+        #region FLytForm
+        // Kode der gør at man kan flytte programmet rundt 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
