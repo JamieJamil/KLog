@@ -377,7 +377,7 @@
             this.groupBox4.Controls.Add(this.label6);
             this.groupBox4.Controls.Add(this.label8);
             this.groupBox4.Controls.Add(this.PladeTB4);
-            this.groupBox4.Location = new System.Drawing.Point(870, 73);
+            this.groupBox4.Location = new System.Drawing.Point(830, 73);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(179, 209);
             this.groupBox4.TabIndex = 8;
@@ -496,7 +496,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(141, 364);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(425, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(360, 150);
             this.dataGridView1.TabIndex = 9;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -515,7 +515,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label15.Location = new System.Drawing.Point(850, 51);
+            this.label15.Location = new System.Drawing.Point(810, 51);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(222, 25);
             this.label15.TabIndex = 11;
@@ -526,10 +526,10 @@
             // 
             this.dataGridView2.BackgroundColor = System.Drawing.Color.GhostWhite;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(799, 364);
+            this.dataGridView2.Location = new System.Drawing.Point(704, 324);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowTemplate.Height = 25;
-            this.dataGridView2.Size = new System.Drawing.Size(324, 150);
+            this.dataGridView2.Size = new System.Drawing.Size(419, 190);
             this.dataGridView2.TabIndex = 12;
             // 
             // panel1
